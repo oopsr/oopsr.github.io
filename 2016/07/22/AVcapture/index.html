@@ -6,17 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 解码杂记 | oopsr的个人博客</title>
+  <title>ios音视频采集笔记 | oopsr的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ios/android开发工程师">
-<meta property="og:type" content="website">
-<meta property="og:title" content="oopsr的个人博客">
-<meta property="og:url" content="http://yoursite.com/tags/解码杂记/index.html">
+  <meta name="description" content="最近利用空余时间研究了一下音视频采集，为方便项目的参考，特意做个笔记记录。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ios音视频采集笔记">
+<meta property="og:url" content="http://yoursite.com/2016/07/22/AVcapture/index.html">
 <meta property="og:site_name" content="oopsr的个人博客">
-<meta property="og:description" content="ios/android开发工程师">
+<meta property="og:description" content="最近利用空余时间研究了一下音视频采集，为方便项目的参考，特意做个笔记记录。">
+<meta property="og:updated_time" content="2017-03-05T13:38:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="oopsr的个人博客">
-<meta name="twitter:description" content="ios/android开发工程师">
+<meta name="twitter:title" content="ios音视频采集笔记">
+<meta name="twitter:description" content="最近利用空余时间研究了一下音视频采集，为方便项目的参考，特意做个笔记记录。">
   
     <link rel="alternative" href="/atom.xml" title="oopsr的个人博客" type="application/atom+xml">
   
@@ -144,60 +145,185 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-AVcapture" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/07/20/AVjichu/" class="archive-article-date">
-  	<time datetime="2016-07-20T15:40:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-07-20</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/20/AVjichu/">音视频编解码基础知识杂记</a>
+    <h1 class="article-title" itemprop="name">
+      ios音视频采集笔记
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2016/07/22/AVcapture/" class="archive-article-date">
+  	<time datetime="2016-07-22T14:08:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-07-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>  最近利用空余时间研究了一下音视频采集，为方便项目的参考，特意做个笔记记录。<br><a id="more"></a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ </div><div class="line">用到AVCaptureSession来进行音视频数据采集，AVCaptureSession是用来管理视频与数据的捕获,采集到音频原始数据pcm(pcm是指未经过压缩处理的)压缩为aac格式，采集到yuv420格式的视频帧压缩成h.264格式。</div></pre></td></tr></table></figure>
+<p>链接: <a href="https://github.com/oopsr/AVDecode" target="_blank" rel="external">demo链接</a></p>
+<h3 id="音视频数据采集"><a href="#音视频数据采集" class="headerlink" title="音视频数据采集"></a>音视频数据采集</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div></pre></td><td class="code"><pre><div class="line">//初始化AVCaptureSession</div><div class="line"> AVCaptureSession *session = [[AVCaptureSession alloc] init];</div><div class="line">//设置录像分辨率</div><div class="line"> [session canSetSessionPreset:AVCaptureSessionPreset640x480];</div><div class="line">//开始配置</div><div class="line"> [session beginConfiguration];</div><div class="line">//获取视频设备对象</div><div class="line"> AVCaptureDevice *videoDevice；</div><div class="line"> NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];</div><div class="line"> <span class="keyword">for</span>(AVCaptureDevice *device <span class="keyword">in</span> devices) &#123;</div><div class="line">  	<span class="keyword">if</span> (device.position == AVCaptureDevicePositionFront) &#123;</div><div class="line">         videoDevice = device;//前置摄像头</div><div class="line">       &#125;</div><div class="line">  &#125;</div><div class="line">//初始化视频捕获输入对象</div><div class="line"> NSError *error;</div><div class="line"> AVCaptureDeviceInput *videoInput =  [[AVCaptureDeviceInput alloc]   initWithDevice:self.videoDevice error:&amp;error];</div><div class="line"> <span class="keyword">if</span> (error) &#123;</div><div class="line">   NSLog(@<span class="string">"摄像头错误"</span>);</div><div class="line">    <span class="built_in">return</span>;</div><div class="line"> &#125;</div><div class="line">//输入对象添加到Session</div><div class="line"> <span class="keyword">if</span> ([session canAddInput:videoInput]) &#123;</div><div class="line">	 [session addInput:videoInput];</div><div class="line"> &#125;</div><div class="line">//输出对象</div><div class="line"> AVCaptureVideoDataOutput *videoOutput = [[AVCaptureVideoDataOutput alloc] init];</div><div class="line">//是否允许卡顿时丢帧</div><div class="line"> videoOutput.alwaysDiscardsLateVideoFrames = NO;</div><div class="line">// 设置像素格式</div><div class="line"> [videoOutput <span class="built_in">set</span>VideoSettings:@&#123;</div><div class="line">                                         (__bridge NSString *)kCVPixelBufferPixelFormatTypeKey:@(kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange)</div><div class="line">                                         &#125;];</div><div class="line">//将输出对象添加到队列、并设置代理</div><div class="line"> dispatch_queue_t captureQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);</div><div class="line"> [videoOutput <span class="built_in">set</span>SampleBufferDelegate:self queue:captureQueue];</div><div class="line">//session添加输出对象</div><div class="line"> <span class="keyword">if</span> ([session canAddOutput:self.videoOutput]) &#123;</div><div class="line">	[session addOutput:self.videoOutput];</div><div class="line"> &#125;</div><div class="line">//创建连接  AVCaptureConnection输入对像和捕获输出对象之间建立连接。</div><div class="line"> AVCaptureConnection *connection = [videoOutput connectionWithMediaType:AVMediaTypeVideo];</div><div class="line">//视频的方向</div><div class="line"> connection.videoOrientation = AVCaptureVideoOrientationPortrait;</div><div class="line">//设置稳定性，判断connection连接对象是否支持视频稳定</div><div class="line"> <span class="keyword">if</span> ([connection isVideoStabilizationSupported]) &#123;</div><div class="line">//这个稳定模式最适合连接</div><div class="line">	 connection.preferredVideoStabilizationMode = AVCaptureVideoStabilizationModeAuto;</div><div class="line">	&#125;</div><div class="line">//缩放裁剪系数</div><div class="line"> connection.videoScaleAndCropFactor = connection.videoMaxScaleAndCropFactor;</div><div class="line">//***音频设置</div><div class="line"> NSError *error;</div><div class="line">//获取音频设备对象</div><div class="line"> AVCaptureDevice *audioDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeAudio];</div><div class="line">//初始化捕获输入对象</div><div class="line"> AVCaptureDeviceInput *audioInput = [[AVCaptureDeviceInput alloc] initWithDevice:self.audioDevice error:&amp;error];</div><div class="line"> <span class="keyword">if</span> (error) &#123;</div><div class="line">   NSLog(@<span class="string">"== 录音设备出错"</span>);</div><div class="line">  &#125;</div><div class="line">// 添加音频输入对象到session</div><div class="line"> <span class="keyword">if</span> ([session canAddInput:audioInput]) &#123;</div><div class="line">   [session addInput:audioInput];</div><div class="line">  &#125;</div><div class="line">//初始化输出捕获对象</div><div class="line"> AVCaptureAudioDataOutput *audioOutput = [[AVCaptureAudioDataOutput alloc] init];</div><div class="line">// 添加音频输出对象到session</div><div class="line"> <span class="keyword">if</span> ([self.session canAddOutput:self.audioOutput]) &#123;</div><div class="line">	 [self.session addOutput:self.audioOutput];</div><div class="line"> &#125;</div><div class="line"></div><div class="line">// 创建设置音频输出代理所需要的线程队列</div><div class="line"> dispatch_queue_t audioQueue =  dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0);</div><div class="line"> [self.audioOutput <span class="built_in">set</span>SampleBufferDelegate:self queue:audioQueue];</div><div class="line">//提交配置</div><div class="line"> [session commitConfiguration];</div><div class="line">//调用startRunning </div><div class="line"> [session startRunning]</div><div class="line">   </div><div class="line">******最后在回调中获取到pcm和yuv数据******</div><div class="line"><span class="comment">#pragma mark - AVCaptureVideoDataAndAudioDataOutputSampleBufferDelegate</span></div><div class="line">- (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:	(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection &#123;</div><div class="line">	<span class="keyword">if</span> (captureOutput == audioOutput) &#123;</div><div class="line">		// 在此方法进行 AAC 软硬编码   		</div><div class="line">   	 &#125;<span class="keyword">else</span> &#123;</div><div class="line">      // 在此方法中进行 H.264 硬软编码</div><div class="line">     &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">其中如果要切换摄像头需要先要锁定防止多处修改，最后解锁，重新提交配置</div></pre></td></tr></table></figure>
+<p>音视频采集到此结束，下一篇介绍VideoToollox和AudioToolbox对音视频进行硬编码。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://raw.githubusercontent.com/oopsr/oopsr.github.io/master/img/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">解码杂记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">AVFoundation</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2016/07/22/AVcapture/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2016/07/25/AudioToolbox/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          音频硬编码AAC(AudioToolBox)
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2016/07/20/AVjichu/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">音视频编解码基础知识杂记</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="AVcapture" data-title="ios音视频采集笔记" data-url="http://yoursite.com/2016/07/22/AVcapture/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"oops"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
   
 
-    
+
 
 
           </div>
@@ -220,9 +346,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
