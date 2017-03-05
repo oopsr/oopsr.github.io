@@ -146,64 +146,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-VideoDecode" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/19/VideoDecode/">H.264解码笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/19/VideoDecode/" class="archive-article-date">
-  	<time datetime="2017-02-19T07:52:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>  H.264编码标准，编码器JM速度慢，无法用于实际，实际用x264编码器。<br>  普通用户通常两种码率控制模式：crf 和 Two pass ABR 。码率控制决定每帧分配多少比特数。决定文件大小和质量。<br>  编译安装libx264：<a href="http://ffmpeg.org/trac/ffmpeg/wiki/CompilationGuide" target="_blank" rel="external">http://ffmpeg.org/trac/ffmpeg/wiki/CompilationGuide</a><br> 1、CRF值：0~51。0无损模式，23缺省值，51最差。越小图像质量越好，18~28合理范围。<br> 2、预设：编码速度和压缩率之间权衡，按照编码速度降序排列为：                      ultrafast,superfast,veryfast,faster,fast,medium,slow,slower,veryslow,placebo 缺省为medium，<br> 音频编码 AAC MP3 WMA<br>直播服务普遍采用了RTMP作为流媒体协议，FLV作为封装格式，H.264作为视频编码格式，AAC作为音频编码格式<br><!--More info: [Writing](https://hexo.io/docs/writing.html)
---></p>
-<!--<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html">Deployment</a><br>–&gt;</p>
--->
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/19/VideoDecode/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
     <article id="post-algorithm" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
