@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hello World | oopsr的个人博客</title>
+  <title>iOS音视频采集笔记 | oopsr的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="周末利用空闲时间搭建了属于自己的个人博客，其实两年前就有这个想法了，后面因为各种原因就把这个事情给落下了，以前的事情就不提了，接下来让我把落下的慢慢的补上吧，毕竟出来混，终究是要还的…">
+  <meta name="description" content="最近利用空余时间研究了一下音视频采集，为方便项目的参考，特意做个笔记记录。用到AVCaptureSession来进行音视频数据采集，AVCaptureSession是用来管理视频与数据的捕获,采集到音频原始数据pcm(pcm是指未经过压缩处理的)压缩为aac格式，采集到yuv420格式的视频帧压缩成h.264格式。链接: demo链接">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
+<meta property="og:title" content="iOS音视频采集笔记">
 <meta property="og:url" content="http://yoursite.com/2016/04/22/AVCollection/index.html">
 <meta property="og:site_name" content="oopsr的个人博客">
-<meta property="og:description" content="周末利用空闲时间搭建了属于自己的个人博客，其实两年前就有这个想法了，后面因为各种原因就把这个事情给落下了，以前的事情就不提了，接下来让我把落下的慢慢的补上吧，毕竟出来混，终究是要还的…">
-<meta property="og:updated_time" content="2017-02-21T02:00:48.000Z">
+<meta property="og:description" content="最近利用空余时间研究了一下音视频采集，为方便项目的参考，特意做个笔记记录。用到AVCaptureSession来进行音视频数据采集，AVCaptureSession是用来管理视频与数据的捕获,采集到音频原始数据pcm(pcm是指未经过压缩处理的)压缩为aac格式，采集到yuv420格式的视频帧压缩成h.264格式。链接: demo链接">
+<meta property="og:updated_time" content="2017-03-05T13:41:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="周末利用空闲时间搭建了属于自己的个人博客，其实两年前就有这个想法了，后面因为各种原因就把这个事情给落下了，以前的事情就不提了，接下来让我把落下的慢慢的补上吧，毕竟出来混，终究是要还的…">
+<meta name="twitter:title" content="iOS音视频采集笔记">
+<meta name="twitter:description" content="最近利用空余时间研究了一下音视频采集，为方便项目的参考，特意做个笔记记录。用到AVCaptureSession来进行音视频数据采集，AVCaptureSession是用来管理视频与数据的捕获,采集到音频原始数据pcm(pcm是指未经过压缩处理的)压缩为aac格式，采集到yuv420格式的视频帧压缩成h.264格式。链接: demo链接">
   
     <link rel="alternative" href="/atom.xml" title="oopsr的个人博客" type="application/atom+xml">
   
@@ -152,7 +152,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      iOS音视频采集笔记
     </h1>
   
 
@@ -165,15 +165,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p> 周末利用空闲时间搭建了属于自己的个人博客，其实两年前就有这个想法了，后面因为各种原因就把这个事情给落下了，以前的事情就不提了，接下来让我把落下的慢慢的补上吧，毕竟出来混，终究是要还的…<br><a id="more"></a></p>
-<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><h3 id="第一点"><a href="#第一点" class="headerlink" title="第一点"></a>第一点</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ 内容1</div></pre></td></tr></table></figure>
-<p>链接: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="第二点"><a href="#第二点" class="headerlink" title="第二点"></a>第二点</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ 内容</div></pre></td></tr></table></figure>
-<p>链接: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="第二点-1"><a href="#第二点-1" class="headerlink" title="第二点"></a>第二点</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ 内容</div></pre></td></tr></table></figure>
-<p>链接: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="第四点"><a href="#第四点" class="headerlink" title="第四点"></a>第四点</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ 内容</div></pre></td></tr></table></figure>
-<p>链接: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>  最近利用空余时间研究了一下音视频采集，为方便项目的参考，特意做个笔记记录。用到AVCaptureSession来进行音视频数据采集，AVCaptureSession是用来管理视频与数据的捕获,采集到音频原始数据pcm(pcm是指未经过压缩处理的)压缩为aac格式，采集到yuv420格式的视频帧压缩成h.264格式。<br>链接: <a href="https://github.com/oopsr/AVDecode" target="_blank" rel="external">demo链接</a></p>
+<a id="more"></a>
+<h3 id="音视频数据采集"><a href="#音视频数据采集" class="headerlink" title="音视频数据采集"></a>音视频数据采集</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div></pre></td><td class="code"><pre><div class="line">//初始化AVCaptureSession</div><div class="line"> AVCaptureSession *session = [[AVCaptureSession alloc] init];</div><div class="line">//设置录像分辨率</div><div class="line"> [session canSetSessionPreset:AVCaptureSessionPreset640x480];</div><div class="line">//开始配置</div><div class="line"> [session beginConfiguration];</div><div class="line">//获取视频设备对象</div><div class="line"> AVCaptureDevice *videoDevice；</div><div class="line"> NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];</div><div class="line"> <span class="keyword">for</span>(AVCaptureDevice *device <span class="keyword">in</span> devices) &#123;</div><div class="line">  	<span class="keyword">if</span> (device.position == AVCaptureDevicePositionFront) &#123;</div><div class="line">         videoDevice = device;//前置摄像头</div><div class="line">       &#125;</div><div class="line">  &#125;</div><div class="line">//初始化视频捕获输入对象</div><div class="line"> NSError *error;</div><div class="line"> AVCaptureDeviceInput *videoInput =  [[AVCaptureDeviceInput alloc]   initWithDevice:self.videoDevice error:&amp;error];</div><div class="line"> <span class="keyword">if</span> (error) &#123;</div><div class="line">   NSLog(@<span class="string">"摄像头错误"</span>);</div><div class="line">    <span class="built_in">return</span>;</div><div class="line"> &#125;</div><div class="line">//输入对象添加到Session</div><div class="line"> <span class="keyword">if</span> ([session canAddInput:videoInput]) &#123;</div><div class="line">	 [session addInput:videoInput];</div><div class="line"> &#125;</div><div class="line">//输出对象</div><div class="line"> AVCaptureVideoDataOutput *videoOutput = [[AVCaptureVideoDataOutput alloc] init];</div><div class="line">//是否允许卡顿时丢帧</div><div class="line"> videoOutput.alwaysDiscardsLateVideoFrames = NO;</div><div class="line">// 设置像素格式</div><div class="line"> [videoOutput <span class="built_in">set</span>VideoSettings:@&#123;</div><div class="line">                                         (__bridge NSString *)kCVPixelBufferPixelFormatTypeKey:@(kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange)</div><div class="line">                                         &#125;];</div><div class="line">//将输出对象添加到队列、并设置代理</div><div class="line"> dispatch_queue_t captureQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);</div><div class="line"> [videoOutput <span class="built_in">set</span>SampleBufferDelegate:self queue:captureQueue];</div><div class="line">//session添加输出对象</div><div class="line"> <span class="keyword">if</span> ([session canAddOutput:self.videoOutput]) &#123;</div><div class="line">	[session addOutput:self.videoOutput];</div><div class="line"> &#125;</div><div class="line">//创建连接  AVCaptureConnection输入对像和捕获输出对象之间建立连接。</div><div class="line"> AVCaptureConnection *connection = [videoOutput connectionWithMediaType:AVMediaTypeVideo];</div><div class="line">//视频的方向</div><div class="line"> connection.videoOrientation = AVCaptureVideoOrientationPortrait;</div><div class="line">//设置稳定性，判断connection连接对象是否支持视频稳定</div><div class="line"> <span class="keyword">if</span> ([connection isVideoStabilizationSupported]) &#123;</div><div class="line">//这个稳定模式最适合连接</div><div class="line">	 connection.preferredVideoStabilizationMode = AVCaptureVideoStabilizationModeAuto;</div><div class="line">	&#125;</div><div class="line">//缩放裁剪系数</div><div class="line"> connection.videoScaleAndCropFactor = connection.videoMaxScaleAndCropFactor;</div><div class="line">//***音频设置</div><div class="line"> NSError *error;</div><div class="line">//获取音频设备对象</div><div class="line"> AVCaptureDevice *audioDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeAudio];</div><div class="line">//初始化捕获输入对象</div><div class="line"> AVCaptureDeviceInput *audioInput = [[AVCaptureDeviceInput alloc] initWithDevice:self.audioDevice error:&amp;error];</div><div class="line"> <span class="keyword">if</span> (error) &#123;</div><div class="line">   NSLog(@<span class="string">"== 录音设备出错"</span>);</div><div class="line">  &#125;</div><div class="line">// 添加音频输入对象到session</div><div class="line"> <span class="keyword">if</span> ([session canAddInput:audioInput]) &#123;</div><div class="line">   [session addInput:audioInput];</div><div class="line">  &#125;</div><div class="line">//初始化输出捕获对象</div><div class="line"> AVCaptureAudioDataOutput *audioOutput = [[AVCaptureAudioDataOutput alloc] init];</div><div class="line">// 添加音频输出对象到session</div><div class="line"> <span class="keyword">if</span> ([self.session canAddOutput:self.audioOutput]) &#123;</div><div class="line">	 [self.session addOutput:self.audioOutput];</div><div class="line"> &#125;</div><div class="line"></div><div class="line">// 创建设置音频输出代理所需要的线程队列</div><div class="line"> dispatch_queue_t audioQueue =  dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0);</div><div class="line"> [self.audioOutput <span class="built_in">set</span>SampleBufferDelegate:self queue:audioQueue];</div><div class="line">//提交配置</div><div class="line"> [session commitConfiguration];</div><div class="line">//调用startRunning </div><div class="line"> [session startRunning]</div><div class="line">   </div><div class="line">******最后在回调中获取到pcm和yuv数据******</div><div class="line"><span class="comment">#pragma mark - AVCaptureVideoDataAndAudioDataOutputSampleBufferDelegate</span></div><div class="line">- (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:	(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection &#123;</div><div class="line">	<span class="keyword">if</span> (captureOutput == audioOutput) &#123;</div><div class="line">		// 在此方法进行 AAC 软硬编码   		</div><div class="line">   	 &#125;<span class="keyword">else</span> &#123;</div><div class="line">      // 在此方法中进行 H.264 硬软编码</div><div class="line">     &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">其中如果要切换摄像头需要先要锁定防止多处修改，最后解锁，重新提交配置</div></pre></td></tr></table></figure>
+<p>音视频采集到此结束，下一篇介绍VideoToollox和AudioToolbox对音视频进行硬编码。</p>
 
       
 
@@ -213,11 +208,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">第一篇</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">开心</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">AVFoundation</a>
         		</li>
       		
 		</ul>
@@ -312,7 +303,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="AVCollection" data-title="Hello World" data-url="http://yoursite.com/2016/04/22/AVCollection/"></div>
+	<div class="ds-thread" data-thread-key="AVCollection" data-title="iOS音视频采集笔记" data-url="http://yoursite.com/2016/04/22/AVCollection/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -416,14 +407,6 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">第一篇</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">开心</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">解码杂记</a>
               </li>
              
@@ -436,6 +419,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">VideoToolBox</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
@@ -444,7 +431,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">VideoToolBox</a>
+                <a href="javascript:void(0)" class="js-tag color4">第一篇</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">开心</a>
               </li>
              
               <li class="article-tag-list-item">
