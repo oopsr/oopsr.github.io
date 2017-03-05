@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>音视频编解码基础知识杂记 | oopsr的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="周末利用空闲时间搭建了属于自己的个人博客，其实两年前就有这个想法了，后面因为各种原因就把这个事情给落下了，以前的事情就不提了，接下来让我把落下的慢慢的补上吧，毕竟出来混，终究是要还的…">
+  <meta name="description" content="最近直播很火，抽时间研究了一下音视频编解码和推流拉流的知识，特此做一些记录，起到巩固知识的作用，更方便以后查阅。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="音视频编解码基础知识杂记">
 <meta property="og:url" content="http://yoursite.com/2016/07/20/AVjichu/index.html">
 <meta property="og:site_name" content="oopsr的个人博客">
-<meta property="og:description" content="周末利用空闲时间搭建了属于自己的个人博客，其实两年前就有这个想法了，后面因为各种原因就把这个事情给落下了，以前的事情就不提了，接下来让我把落下的慢慢的补上吧，毕竟出来混，终究是要还的…">
-<meta property="og:updated_time" content="2017-03-05T13:35:20.000Z">
+<meta property="og:description" content="最近直播很火，抽时间研究了一下音视频编解码和推流拉流的知识，特此做一些记录，起到巩固知识的作用，更方便以后查阅。">
+<meta property="og:updated_time" content="2017-03-05T15:35:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="音视频编解码基础知识杂记">
-<meta name="twitter:description" content="周末利用空闲时间搭建了属于自己的个人博客，其实两年前就有这个想法了，后面因为各种原因就把这个事情给落下了，以前的事情就不提了，接下来让我把落下的慢慢的补上吧，毕竟出来混，终究是要还的…">
+<meta name="twitter:description" content="最近直播很火，抽时间研究了一下音视频编解码和推流拉流的知识，特此做一些记录，起到巩固知识的作用，更方便以后查阅。">
   
     <link rel="alternative" href="/atom.xml" title="oopsr的个人博客" type="application/atom+xml">
   
@@ -165,8 +165,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p> 周末利用空闲时间搭建了属于自己的个人博客，其实两年前就有这个想法了，后面因为各种原因就把这个事情给落下了，以前的事情就不提了，接下来让我把落下的慢慢的补上吧，毕竟出来混，终究是要还的…<br><a id="more"></a></p>
-<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><h3 id="第一点"><a href="#第一点" class="headerlink" title="第一点"></a>第一点</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">$ 封装格式：是将已经压缩编码的视频数据和音频数据按照一定的格式放到一起，封装格式种类很多，例如MP4，MKV，RMVB，TS，FLV，AVI等等</div><div class="line"></div><div class="line">$ 解封装： 就是将输入的封装格式的数据，分离成为音频流压缩编码数据和视频流压缩编码数据，例如，FLV格式的数据，经过解封装操作后，输出H.264编码的视频码流和AAC编码的音频码流。</div><div class="line"></div><div class="line">$解码: 将视频/音频压缩编码数据，解码成为非压缩的视频/音频原始数据。音频的压缩编码标准包含AAC，MP3，AC-3等等，视频的压缩编码标准则包含H.264，MPEG2，VC-1等等。解码是整个系统中最重要也是最复杂的一个环节。通过解码，压缩编码的视频数据输出成为非压缩的颜色数据，例如YUV420P，RGB等等；压缩编码的音频数据输出成为非压缩的音频抽样数据，例如PCM数据。</div><div class="line"></div><div class="line">$ 流媒体协议：服务器与客户端之间通信遵循的规定。当前网络上主要的流媒体协议RTSP+RTP、RTMP、RTMFP、MMS、HTTP。其中传输层协议有UDP也有TCP，或者TCP+UDP；</div><div class="line"></div><div class="line">$视频编码:视频编码的主要作用是将视频像素数据（RGB，YUV等）压缩成为视频码流，从而降低视频的数据量。如果视频不经过压缩编码的话，体积通常是非常大的，一部电影可能就要上百G的空间。视频编码是视音频技术中最重要的技术之一。视频码流的数据量占了视音频总数据量的绝大部分。高效率的视频编码在同等的码率下，可以获得更高的视频质量。</div><div class="line"></div><div class="line">$　视频分辨率 ：各种电视规格分辨率比较视 频的画面大小称为“分辨率”。数位视频以像素为度量单位，而类比视频以水平扫瞄线数量为度量单位。标清电视频号分辨率为 720/704/640x480i60（NTSC）或768/720x576i50（PAL/SECAM）。新的高清电视（HDTV）分辨率可达 1920x1080p60，即每条水平扫瞄线有1920个像素，每个画面有1080条扫瞄线，以每秒钟60张画面的速度播放。</div><div class="line"></div><div class="line">$画面更新率fps:是指视频格式每秒钟播放的静态画面数量</div><div class="line"></div><div class="line">$有损压缩和无损压缩 : 在视频压缩中有损（Lossy ）和无（Lossless）的概念与静态图像中基本类似。无损压缩也即压缩前和解压缩后的数据完全一致。多数的无损压缩都采用RLE行程编码算法。有损 压缩意味着解压缩后的数据与压缩前的数据不一致。在压缩的过程中要丢失一些人眼和人耳所不敏感的图像或音频信息，而且丢失的信息不可恢复。几乎所有高压缩的算法都采用有损压缩，这样才能达到低数据率的目标。丢失的数据率与压缩比有关，压缩比越小，丢失的数据越多，解压缩后的效果一般越差。此外，某些有损压 缩算法采用多次重复压缩的方式，这样还会引起额外的数据丢失。</div></pre></td></tr></table></figure>
+        <p> 最近直播很火，抽时间研究了一下音视频编解码和推流拉流的知识，特此做一些记录，起到巩固知识的作用，更方便以后查阅。<br><a id="more"></a></p>
+<h3 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">$ 封装格式：是将已经压缩编码的视频数据和音频数据按照一定的格式放到一起，封装格式种类很多，例如MP4，MKV，RMVB，TS，FLV，AVI等等</div><div class="line"></div><div class="line">$ 解封装： 就是将输入的封装格式的数据，分离成为音频流压缩编码数据和视频流压缩编码数据，例如，FLV格式的数据，经过解封装操作后，输出H.264编码的视频码流和AAC编码的音频码流。</div><div class="line"></div><div class="line">$解码: 将视频/音频压缩编码数据，解码成为非压缩的视频/音频原始数据。音频的压缩编码标准包含AAC，MP3，AC-3等等，视频的压缩编码标准则包含H.264，MPEG2，VC-1等等。解码是整个系统中最重要也是最复杂的一个环节。通过解码，压缩编码的视频数据输出成为非压缩的颜色数据，例如YUV420P，RGB等等；压缩编码的音频数据输出成为非压缩的音频抽样数据，例如PCM数据。</div><div class="line"></div><div class="line">$ 流媒体协议：服务器与客户端之间通信遵循的规定。当前网络上主要的流媒体协议RTSP+RTP、RTMP、RTMFP、MMS、HTTP。其中传输层协议有UDP也有TCP，或者TCP+UDP；</div><div class="line"></div><div class="line">$视频编码:视频编码的主要作用是将视频像素数据（RGB，YUV等）压缩成为视频码流，从而降低视频的数据量。如果视频不经过压缩编码的话，体积通常是非常大的，一部电影可能就要上百G的空间。视频编码是视音频技术中最重要的技术之一。视频码流的数据量占了视音频总数据量的绝大部分。高效率的视频编码在同等的码率下，可以获得更高的视频质量。</div><div class="line"></div><div class="line">$　视频分辨率 ：各种电视规格分辨率比较视 频的画面大小称为“分辨率”。数位视频以像素为度量单位，而类比视频以水平扫瞄线数量为度量单位。标清电视频号分辨率为 720/704/640x480i60（NTSC）或768/720x576i50（PAL/SECAM）。新的高清电视（HDTV）分辨率可达 1920x1080p60，即每条水平扫瞄线有1920个像素，每个画面有1080条扫瞄线，以每秒钟60张画面的速度播放。</div><div class="line"></div><div class="line">$画面更新率fps:是指视频格式每秒钟播放的静态画面数量</div><div class="line"></div><div class="line">$有损压缩和无损压缩 : 在视频压缩中有损（Lossy ）和无（Lossless）的概念与静态图像中基本类似。无损压缩也即压缩前和解压缩后的数据完全一致。多数的无损压缩都采用RLE行程编码算法。有损 压缩意味着解压缩后的数据与压缩前的数据不一致。在压缩的过程中要丢失一些人眼和人耳所不敏感的图像或音频信息，而且丢失的信息不可恢复。几乎所有高压缩的算法都采用有损压缩，这样才能达到低数据率的目标。丢失的数据率与压缩比有关，压缩比越小，丢失的数据越多，解压缩后的效果一般越差。此外，某些有损压 缩算法采用多次重复压缩的方式，这样还会引起额外的数据丢失。</div></pre></td></tr></table></figure>
 <h3 id="主流的编码标准"><a href="#主流的编码标准" class="headerlink" title="主流的编码标准"></a>主流的编码标准</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$  H.264编码标准，编码器JM速度慢，无法用于实际，实际用x264编码器。</div><div class="line">  普通用户通常两种码率控制模式：crf 和 Two pass ABR 。码率控制决定每帧分配多少比特数。决定文件大小和质量。</div><div class="line">  编译安装libx264：http://ffmpeg.org/trac/ffmpeg/wiki/CompilationGuide</div><div class="line"> 1、CRF值：0~51。0无损模式，23缺省值，51最差。越小图像质量越好，18~28合理范围。</div><div class="line"> 2、预设：编码速度和压缩率之间权衡，按照编码速度降序排列为：                      ultrafast,superfast,veryfast,faster,fast,medium,slow,slower,veryslow,placebo 缺省为medium，</div><div class="line"> 音频编码 AAC MP3 WMA</div><div class="line">直播服务普遍采用了RTMP作为流媒体协议，FLV作为封装格式，H.264作为视频编码格式，AAC作为音频编码格式</div></pre></td></tr></table></figure>
 
       
@@ -406,27 +406,19 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">AVFoundation</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">AudioToolBox</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">时常更新</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">解码杂记</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">AVFoundation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">VideoToolBox</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">AudioToolBox</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -435,6 +427,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">开心</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">时常更新</a>
               </li>
              
               <li class="article-tag-list-item">
